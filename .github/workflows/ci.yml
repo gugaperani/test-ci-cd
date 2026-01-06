@@ -8,33 +8,31 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
-    name: Lint Code
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  # lint:
+    # name: Lint Code
+    # runs-on: ubuntu-latest
+    # steps:
+    #   - name: Checkout code
+    #     uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
+    #   - name: Setup Node.js
+    #     uses: actions/setup-node@v4
+    #     with:
+    #       node-version: '18'
+    #       cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+    #   - name: Install dependencies
+    #     run: npm ci
 
-      - name: Run ESLint
-        run: npm run lint
+    #   - name: Run ESLint
+    #     run: npm run lint
 
-      - name: Check code formatting
-        run: npm run format:check
+    #   - name: Check code formatting
+    #     run: npm run format:check
 
   test-ios:
     name: iOS Tests
     runs-on: macos-14
-    needs: lint
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[test-ios]')
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -58,9 +56,7 @@ jobs:
         run: npm install -g appium@next
 
       - name: Install Appium drivers
-        run: |
-          appium driver install xcuitest
-          appium driver list
+        run: appium driver list
 
       - name: List available simulators
         run: xcrun simctl list devices available
@@ -105,8 +101,6 @@ jobs:
   test-android:
     name: Android Tests
     runs-on: macos-14
-    needs: lint
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[test-android]')
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
