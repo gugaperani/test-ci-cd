@@ -33,7 +33,6 @@ jobs:
   test-ios:
     name: iOS Tests
     runs-on: macos-14
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[test-ios]')
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -104,7 +103,6 @@ jobs:
   test-android:
     name: Android Tests
     runs-on: macos-14
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[test-android]')
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
