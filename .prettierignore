@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+coverage/
+allure-results/
+allure-report/
+package-lock.json
+*.log
+.env
+.env.*
+!.env.example
+app/

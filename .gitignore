@@ -1,0 +1,92 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Mobile App Binaries
+app/
+*.apk
+*.ipa
+*.app
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Test Results & Reports
+allure-results/
+allure-report/
+test-results/
+screenshots/
+videos/
+errorShots/
+logs/
+*.log
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Build outputs
+dist/
+build/
+out/
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IDE - WebStorm/IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IDE - Eclipse
+.project
+.classpath
+.settings/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# TypeScript
+*.tsbuildinfo
+
+# Appium
+.appium/
+
+# AWS
+.aws/
+credentials
+
+# Misc
+*.bak
+*.orig
+.cache/
+.npm/
+.eslintcache
