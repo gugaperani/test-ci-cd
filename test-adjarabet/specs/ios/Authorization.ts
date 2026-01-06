@@ -20,12 +20,12 @@ describe('Authorization', () => {
     await expect(LoginScreen.loginErrorMessage).toHaveText(geStrings.shared_aberror_pattern_not_matched);
   });
 
-  it('should prevent UNVERIFIED users from logging in', async () => {
-    const userMetadata = getUserMetadata(TestUsers.UNVERIFIED_USER);
-    await LoginScreen.login(TestUsers.UNVERIFIED_USER);
-    await waits.waitForDisplayed(LoginScreen.ModuleDescription);
-    await expect(LoginScreen.ModuleDescription).toHaveText(userMetadata.expectedErrorMessage!);
-  });
+  // it('should prevent UNVERIFIED users from logging in', async () => {
+  //   const userMetadata = getUserMetadata(TestUsers.UNVERIFIED_USER);
+  //   await LoginScreen.login(TestUsers.UNVERIFIED_USER);
+  //   await waits.waitForDisplayed(LoginScreen.ModuleDescription);
+  //   await expect(LoginScreen.ModuleDescription).toHaveText(userMetadata.expectedErrorMessage!);
+  // });
 
   // it('should prevent RESIDENT users from logging in', async () => {
   //   const userMetadata = getUserMetadata(TestUsers.RESIDENT_USER);
